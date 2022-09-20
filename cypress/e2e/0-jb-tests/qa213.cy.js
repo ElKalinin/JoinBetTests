@@ -1,6 +1,6 @@
 // Hi, guys!
 
-describe('Test QA213',()=>{
+describe('Test QA',()=>{
     it('Part 1',()=>{
         cy.visit('https://qa-gdjsmns.hk/ru/sportsbook/home', {
             auth: {
