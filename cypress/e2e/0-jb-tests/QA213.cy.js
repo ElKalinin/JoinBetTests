@@ -30,7 +30,7 @@ describe('Test QA213',()=>{
                 password: 'ajvxeASUkr'
             }
         })
-
+//@TODO убрать строку
         cy.get('[class="Menu_root__P08M2"]').contains('Казино')
             .should('be.visible')
         cy.get('[class="Menu_root__P08M2"]').contains('Слоты')
