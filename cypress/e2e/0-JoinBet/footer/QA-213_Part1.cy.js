@@ -1,6 +1,6 @@
-//Hi, guys!!!
+// Hi,guys!!!!
 
-describe('Test QA213',()=>{
+describe('Part 1 of Test QA213',()=>{
     it('Column 1',()=>{
         cy.visit('https://qa-gdjsmns.hk/ru/sportsbook/home', {
             auth: {
@@ -30,7 +30,7 @@ describe('Test QA213',()=>{
                 password: 'ajvxeASUkr'
             }
         })
-//@TODO убрать строку
+
         cy.get('[class="Menu_root__P08M2"]').contains('Казино')
             .should('be.visible')
         cy.get('[class="Menu_root__P08M2"]').contains('Слоты')
