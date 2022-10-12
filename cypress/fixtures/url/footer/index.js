@@ -1,0 +1,21 @@
+export default [
+    'https://st2-gdjsmns.hk/ru/sportsbook/home',
+    'https://st2-gdjsmns.hk/ru/sportsbook/live',
+    'https://st2-gdjsmns.hk/ru/sportsbook/esports/',
+    //statisticsUrl: `Статистика`,
+    //resultsUrl: `Результаты`,
+    'https://st2-gdjsmns.hk/ru/casino/categories/2254',
+    'https://st2-gdjsmns.hk/ru/casino/live',
+    'https://st2-gdjsmns.hk/ru/casino/categories/2245',
+    'https://st2-gdjsmns.hk/ru/casino/categories/2242',
+    'https://st2-gdjsmns.hk/ru/casino/categories/2248',
+    'https://st2-gdjsmns.hk/ru/info/about',
+    'https://st2-gdjsmns.hk/ru/info/privacy',
+    'https://st2-gdjsmns.hk/ru/info/faq',
+    'https://st2-gdjsmns.hk/ru/info/aml-kyc',
+    'https://st2-gdjsmns.hk/ru/info/responsiblegambling',
+    //'https://st2-gdjsmns.hk/ru/casino/lobby#',
+    'https://st2-gdjsmns.hk/ru/promo',
+    'https://st2-gdjsmns.hk/ru/info/payments',
+    'https://st2-gdjsmns.hk/ru/info/bettingpolicy'
+]
