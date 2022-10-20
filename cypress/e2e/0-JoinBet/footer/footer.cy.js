@@ -25,23 +25,31 @@ import urls from '../../../fixtures/url/footer';
         })
 
             describe('Link navigation. Casino. Footer.',()=>{
-                it.only('Переход по ссылкам', () => {
+                it('Переход по ссылкам', () => {
                     cy.visit(`https://st2-gdjsmns.hk/ru/casino/lobby`, {
                         auth: {
                             username: 'joinbet',
                             password: 'ajvxeASUkr'
                         }
                     })
-                    const selectors = Object.values(footer.links)
-                    selectors.forEach((selector, index) => {
+                    Object.values(footer.links).forEach((selector, index) => {
                         cy.scrollTo('bottom')
                         cy.wait(3000)
                         cy.get(selector)
                             .click()
-                        cy.url().should('eq', urls[index])
+                        cy.url().should('include', urls[index])
+                        cy.request({
+                            url: urls[index],
+                            auth: {
+                                username: 'joinbet',
+                                password: 'ajvxeASUkr'
+                            },
+                            failOnStatusCode: false
+                        })
+                            .then((response)=>{
+                                expect(response.status).to.eq(200)
+                            })
                         cy.go('back')
-
                     })
                 })
             })
-
