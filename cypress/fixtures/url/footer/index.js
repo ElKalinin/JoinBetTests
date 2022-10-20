@@ -15,7 +15,7 @@ export default [
     '/info/aml-kyc',
     '/info/responsiblegambling',
     //'https://st2-gdjsmns.hk/ru/casino/lobby#',
-    '/ru/promo',
+    '/promo',
     '/info/payments',
     '/info/bettingpolicy'
 ]
