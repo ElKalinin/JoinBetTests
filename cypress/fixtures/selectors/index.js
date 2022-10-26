@@ -20,5 +20,6 @@ export const footer = {
         payments: 'a[target="_self"][href*="info/payments"]', //'Прием платежей'
         bettingPolicy: 'a[target="_self"][href*="info/bettingpolicy"]' //'Политика ставок'
     },
-    titles: '[class*="Menu_label"]' //'Cтавки','Казино','Информация','Бонусы','Полезное'
+    titles: '[class*="Menu_label"]', //'Cтавки','Казино','Информация','Бонусы','Полезное'
+    logo: 'a[aria-label="logoLinkFooter"][href*="sportsbook/home"]' //Логотип
 }

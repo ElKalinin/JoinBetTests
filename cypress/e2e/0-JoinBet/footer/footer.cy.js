@@ -53,3 +53,30 @@ describe('Link navigation. Casino. Footer.',()=>{
         })
     })
 })
+
+describe('Logo click. Casino. Footer.',()=>{
+    it.only('Клик по логотипу',()=>{
+        cy.visit('https://st2-gdjsmns.hk/ru/casino/lobby',{
+            auth: {
+                username: stand1.username,
+                password: stand1.password
+            }
+        })
+        cy.scrollTo('bottom')
+        cy.wait(3000)
+        cy.get(footer.logo)
+            .click()
+        cy.url().should('include',urls[0])
+        cy.request({
+            url: urls[0],
+            auth: {
+                username: stand1.username,
+                password: stand1.password
+            },
+            failOnStatusCode: false
+        })
+            .then((response)=>{
+                expect(response.status).to.eq(200)
+            })
+    })
+})
