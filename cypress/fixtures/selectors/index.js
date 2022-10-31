@@ -21,5 +21,19 @@ export const footer = {
         bettingPolicy: 'a[target="_self"][href*="info/bettingpolicy"]' //'Политика ставок'
     },
     titles: '[class*="Menu_label"]', //'Cтавки','Казино','Информация','Бонусы','Полезное'
-    logo: 'a[aria-label="logoLinkFooter"][href*="sportsbook/home"]' //Логотип
+    logo: 'a[aria-label="logoLinkFooter"][href*="sportsbook/home"]', //Логотип
+    payment: {
+        uzcard: 'img[alt="UZCARD"]',
+        visa: 'img[alt="VISA"]',
+        mastercard: 'img[alt="mastercard"]',
+        mir: 'img[alt="MIR"]',
+        maestro: 'img[alt="Maestro.svg"]',
+        qiwi: 'img[alt="QIWI"]',
+        adv: 'img[alt="ADV"]',
+        webmoney: 'img[alt="WebMoney"]',
+        pm: 'img[alt="PM"]',
+        bitcoin: 'img[alt="Bitcoin"]',
+        usdt: 'img[alt="USDT"]',
+        ethereum: 'img[alt="Ethereum"]'
+    }
 }

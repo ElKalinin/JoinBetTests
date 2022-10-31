@@ -4,7 +4,7 @@ module.exports = defineConfig({
   env: {
     stand1: {
       username: "joinbet",
-      password: "ajvxeASUkr",
+      password: "43wSfdpcREJF4zu",
     },
   },
 
