@@ -18,7 +18,7 @@ export const footer = {
         //welcomeBonus: 'a[target="_self"][href*="#"]', //'Вступительный бонус'
         terms: 'a[target="_self"][href*="promo"]', //'Условия'
         payments: 'a[target="_self"][href*="info/payments"]', //'Прием платежей'
-        bettingPolicy: 'a[target="_self"][href*="info/bettingpolicy"]' //'Политика ставок'
+        bettingPolicy: 'a[target="_self"][href*="info/bets"]' //'Политика ставок'
     },
     titles: '[class*="Menu_label"]', //'Cтавки','Казино','Информация','Бонусы','Полезное'
     logo: 'a[aria-label="logoLinkFooter"][href*="sportsbook/home"]', //Логотип
@@ -37,3 +37,24 @@ export const footer = {
         ethereum: 'img[alt="Ethereum"]'
     }
 }
+export const bonuses = {
+    listBonuses: {
+        groups: '[role="group"]', // группы бонусов
+        groupHeaders: '[role="group"] > h3', // заголовки групп бонусов
+        tags: '[role="group"] > article > a > span', // тэги бонусов ("Казино"/"Спорт")
+    },
+    singleBonus: {
+        banner: '[role="banner"]', // главный баннер
+        bannerText: '[role="banner"] div', // текст баннера
+        bannerHeader: '[role="banner"] h1', // заголовок баннера
+        bannerTimeEndText: '[role="banner"] > span', // "Акция завершится 31 октября 00:00"
+        faqText: 'hgroup span', // FAQ текст
+        faqHeader: 'hgroup h2', // FAQ заголовок
+        bonusTime: '[role="banner"] div div div span:nth-child(2)', // дн/час/мин/сек
+    },
+    regBonus: {
+        modalWindow: '[class^="RegistrationBonus_root"]', // модальное окно
+        getButton: '[aria-label="bonusButton"]', // кнопка "Получи бонус!"
+        closeButton: '[class^="RegistrationBonus_root"] > header > button:nth-child(1)', // кнопка "Закрыть"
+    },
+};
