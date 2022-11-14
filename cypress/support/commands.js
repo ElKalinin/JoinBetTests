@@ -23,3 +23,28 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+const stand1 = Cypress.env('stand1');
+
+Cypress.Commands.add('authenticateUrl',(url)=>{
+    cy.visit(url, {
+        auth: {
+            username: stand1.username,
+            password: stand1.password
+        }
+    })
+});
+
+Cypress.Commands.add('status200',(url)=>{
+    cy.request({
+        url: url,
+        auth: {
+            username: stand1.username,
+            password: stand1.password
+        },
+        failOnStatusCode: false
+    })
+        .then((response)=>{
+            expect(response.status).to.eq(200)
+        })
+});
