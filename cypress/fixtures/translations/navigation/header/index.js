@@ -1,0 +1,26 @@
+export default [
+    {
+        lang: 'ru',
+        headerCurrency: {
+            usd: 'Доллар СШАUSD',
+            rub: 'Российский рубльRUB',
+            uzs: 'Узбекский сумUZS',
+        }
+    },
+    {
+        lang: 'en',
+        headerCurrency: {
+            rub: 'Russian roubleRUB',
+            usd: 'US DollarUSD',
+            uzs: 'Uzbekistani soʻmUZS',
+        }
+    },
+    {
+        lang: 'uz',
+        headerCurrency: {
+            usd: 'AQSh dollariUSD',
+            uzs: 'Oʻzbek soʻmUZS',
+            rub: 'Rossiya rubliRUB',
+        }
+    },
+]
