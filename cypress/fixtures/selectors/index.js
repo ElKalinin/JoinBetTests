@@ -35,8 +35,8 @@ export const footer = {
         bitcoin: 'img[alt="Bitcoin"]',
         usdt: 'img[alt="USDT"]',
         ethereum: 'img[alt="Ethereum"]'
-    }
-}
+    },
+};
 export const bonuses = {
     listBonuses: {
         groups: '[role="group"]', // группы бонусов
@@ -58,3 +58,17 @@ export const bonuses = {
         closeButton: '[class^="RegistrationBonus_root"] > header > button:nth-child(1)', // кнопка "Закрыть"
     },
 };
+export const header = {
+    regButton: '[class^="Button_root__4U57W"][aria-label="signUpBtn"]',
+    closeRegButton: '[class^="ButtonClose_root"][aria-label="Close modal auth"]',
+    window1: {
+        currencyItem: '[class^="CurrencySelect_toggler"]',
+        currencyNameList: '[class*="CurrencySelect_item"]',
+        currencyLogo: {
+            usd: 'img[alt="USD"]',
+            rub: 'img[alt="RUB"]',
+            uzs: 'img[alt="UZS"]',
+        },
+        regEmailButton: '[class*="TypeToggler_button"]',
+    },
+}
