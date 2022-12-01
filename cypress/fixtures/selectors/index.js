@@ -59,16 +59,30 @@ export const bonuses = {
     },
 };
 export const header = {
-    regButton: '[class^="Button_root__4U57W"][aria-label="signUpBtn"]',
-    closeRegButton: '[class^="ButtonClose_root"][aria-label="Close modal auth"]',
+    regButton: '[class^="Button_root__4U57W"][aria-label="signUpBtn"]', // кнопка "Регистрация"
+    closeRegButton: '[class^="ButtonClose_root"][aria-label="Close modal auth"]', // кнопка закрывания окна регистрации
     window1: {
-        currencyItem: '[class^="CurrencySelect_toggler"]',
-        currencyNameList: '[class*="CurrencySelect_item"]',
+        currencyItem: '[class^="CurrencySelect_toggler"]', // кнопка выбор валюты
+        currencyList: '[class^="CurrencySelect_list"]', // поле со всей валютой
+        currencyNameList: '[class*="CurrencySelect_item"]', // валюта
         currencyLogo: {
             usd: 'img[alt="USD"]',
             rub: 'img[alt="RUB"]',
             uzs: 'img[alt="UZS"]',
         },
-        regEmailButton: '[class*="TypeToggler_button"]',
+        regChoiceButton: {
+            regEmailButton: '[class*="TypeToggler_button"][aria-label="Toggler on email"]', // кнопка выбора почты
+            regPhoneButton: '[class*="TypeToggler_button"][aria-label="Toggler on mobile"]', // кнопка выбора телефона
+        },
+        email: '[class*="inputWrapper"]', // поле электронной почты
+        numberPh: '[aria-label="Enter phone number"]', // поле номера телефона
+        countryButton: '[class*="CountrySelect_toggler"]', // кнопка выбора страны при регистрации по почте
+        country: '[class*="CountrySelect_item"]', // страна при регистрации по почте
+        countryPhButton: '[class*="phone_toggleView"]', // кнопка выбора страны при регистрации по телефону
+        countryPh: '[class*="phone_item"]', // страна при регистрации по телефону
+        banner: '[class^="SignUpBannerBlock_bannerStub"]', // баннер вверху окна
+        regModButton: '[aria-label="authModalButton"]', // кнопка "Зарегистрироваться"
+        promocodeButton: '[class*="Promocode_button"]', // кнопка "Промокод (если есть)"
+        promocode: '[class*="PromocodeField_promocode"]', // поле для ввода промокода
     },
 }
