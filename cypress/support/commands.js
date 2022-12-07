@@ -24,7 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-import {regByEmail} from "./utils/reg";
+import {regStep1FieldsFillByEmail} from "./utils/reg";
 import {header} from "../fixtures/selectors";
 
 const stand1 = Cypress.env('stand1');

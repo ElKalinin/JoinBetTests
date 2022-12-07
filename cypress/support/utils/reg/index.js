@@ -1,73 +1,107 @@
 import {header} from "../../../fixtures/selectors";
 import {regCountry, regCurrency} from "../../../fixtures/arrays/header";
 import {regCodeCountry} from "../../../fixtures/arrays/header";
-/*
- Регистрация по телефону и по почте
- el0 - e-mail
- index0 - номер страны из списка
- index1 - номер телефонного кода страны
- el1 - номер телефона
- index2 - номер валюты
- el2 - промокод
+
+/**
+ * Заполнение полей при регистрации по почте с проверкой введённых данных
+ * @param {object} params - параметры
+ * @param {string|number} params.email - e-mail
+ * @param {number} params.country - номер страны из списка
+ * @param {number} params.currency - номер валюты
+ * @param {string|number} params.promo - промокод
  */
-export const regByEmail = (el0, index0, index2, el2) => {
+export const regStep1FieldsFillByEmail = (params) => {
     cy.get(header.regButton).click();
     cy.get(header.window1.email)
-        .type(el0)
-        .should('have.value', el0)
+        .type(params.email)
+        .should('have.value', params.email)
         .and('be.visible');
     cy.get(header.window1.countryButton).click();
-    cy.get(header.window1.country).eq(index0).click();
-    cy.get(header.window1.countryButton).should('have.text', regCountry[index0]);
+    cy.get(header.window1.country).eq(params.country).click();
+    cy.get(header.window1.countryButton).should('have.text', regCountry[params.country]);
     cy.get(header.window1.currencyItem).click();
-    cy.get(header.window1.currencyNameList).eq(index2).click();
-    cy.get(header.window1.currencyItem).should('have.text', regCurrency[index2]);
+    cy.get(header.window1.currencyNameList).eq(params.currency).click();
+    cy.get(header.window1.currencyItem).should('have.text', regCurrency[params.currency]);
     cy.get(header.window1.promocodeButton).click();
     cy.get(header.window1.promocode)
-        .type(el2)
-        .should('have.value', el2)
+        .type(params.promo)
+        .should('have.value', params.promo)
         .and('be.visible');
 };
-export const regByPhone = (index1, el1, index2, el2) => {
+
+/**
+ * Заполнение полей при регистрации по телефону с проверкой введённых данных
+ * @param {object} params - параметры
+ * @param {number} params.phoneCode - номер телефонного кода страны
+ * @param {number} params.phone - номер телефона
+ * @param {number} params.currency - номер валюты
+ * @param {string|number} params.promo - промокод
+ */
+export const regStep1FieldsFillByPhone = (params) => {
     cy.get(header.window1.countryPhButton).click();
-    cy.get(header.window1.countryPh).eq(index1).click();
-    cy.get(header.window1.countryPhButton).should('have.text', regCodeCountry[index1]);
+    cy.get(header.window1.countryPh).eq(params.phoneCode).click();
+    cy.get(header.window1.countryPhButton).should('have.text', regCodeCountry[params.phoneCode]);
     cy.get(header.window1.numberPh)
-        .type(el1)
-        .should('have.value', el1)
+        .type(params.phone)
+        .should('have.value', params.phone)
         .and('be.visible');
     cy.get(header.window1.currencyItem).click();
-    cy.get(header.window1.currencyNameList).eq(index2).click();
-    cy.get(header.window1.currencyItem).should('have.text', regCurrency[index2]);
+    cy.get(header.window1.currencyNameList).eq(params.currency).click();
+    cy.get(header.window1.currencyItem).should('have.text', regCurrency[params.currency]);
     cy.get(header.window1.promocodeButton).click();
     cy.get(header.window1.promocode)
-        .type(el2)
-        .should('have.value', el2)
+        .type(params.promo)
+        .should('have.value', params.promo)
         .and('be.visible');
 };
-export const intermCheckReg = (index2, el2) => {
-    cy.get(header.window1.currencyItem).should('have.text', regCurrency[index2]);
+
+/**
+ * Промежуточная проверка на видимость введённых данных при регистрации
+ * @param {object} params - параметры
+ * @param {number} params.currency - номер валюты
+ * @param {string|number} params.promo - промокод
+ */
+export const regStep1CurrencyAndPromoCheck = (params) => {
+    cy.get(header.window1.currencyItem).should('have.text', regCurrency[params.currency]);
     cy.get(header.window1.promocode)
-        .should('have.value', el2)
+        .should('have.value', params.promo)
         .and('be.visible');
 };
-export const checkRegByEmail = (el0, index0, index2, el2) => {
+
+/**
+ * Проверка на видимость всех введённых данных при регистрации по почте
+ * @param {object} params - параметры
+ * @param {string|number} params.email - e-mail
+ * @param {number} params.country - номер страны из списка
+ * @param {number} params.currency - номер валюты
+ * @param {string|number} params.promo - промокод
+ */
+export const checkRegStep1FieldsFillByEmail = (params) => {
     cy.get(header.window1.email)
-        .should('have.value', el0)
+        .should('have.value', params.email)
         .and('be.visible');
-    cy.get(header.window1.countryButton).should('have.text', regCountry[index0]);
-    cy.get(header.window1.currencyItem).should('have.text', regCurrency[index2]);
+    cy.get(header.window1.countryButton).should('have.text', regCountry[params.country]);
+    cy.get(header.window1.currencyItem).should('have.text', regCurrency[params.currency]);
     cy.get(header.window1.promocode)
-        .should('have.value', el2)
+        .should('have.value', params.promo )
         .and('be.visible');
 };
-export const checkRegByPhone = (index1, el1, index2, el2) => {
-    cy.get(header.window1.countryPhButton).should('have.text', regCodeCountry[index1]);
+
+/**
+ * Проверка на видимость всех введённых данных при регистрации по телефону
+ * @param {object} params - параметры
+ * @param {number} params.phoneCode - номер телефонного кода страны
+ * @param {number} params.phone - номер телефона
+ * @param {number} params.currency - номер валюты
+ * @param {string|number} params.promo - промокод
+ */
+export const checkRegStep1FieldsFillByPhone = (params) => {
+    cy.get(header.window1.countryPhButton).should('have.text', regCodeCountry[params.phoneCode]);
     cy.get(header.window1.numberPh)
-        .should('have.value', el1)
+        .should('have.value', params.phone)
         .and('be.visible');
-    cy.get(header.window1.currencyItem).should('have.text', regCurrency[index2]);
+    cy.get(header.window1.currencyItem).should('have.text', regCurrency[params.currency]);
     cy.get(header.window1.promocode)
-        .should('have.value', el2)
+        .should('have.value', params.promo)
         .and('be.visible');
 };
