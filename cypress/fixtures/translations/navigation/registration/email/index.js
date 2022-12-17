@@ -5,7 +5,8 @@ export default [
             usd: 'Доллар СШАUSD',
             rub: 'Российский рубльRUB',
             uzs: 'Узбекский сумUZS',
-        }
+        },
+        errorMessageEmail: 'Введите email',
     },
     {
         lang: 'en',
@@ -13,7 +14,8 @@ export default [
             rub: 'Russian roubleRUB',
             usd: 'US DollarUSD',
             uzs: 'Uzbekistani soʻmUZS',
-        }
+        },
+        errorMessageEmail: 'Enter email address',
     },
     {
         lang: 'uz',
@@ -21,6 +23,7 @@ export default [
             usd: 'AQSh dollariUSD',
             uzs: 'Oʻzbek soʻmUZS',
             rub: 'Rossiya rubliRUB',
-        }
+        },
+        errorMessageEmail: 'Email manzilingizni kiriting',
     },
 ]
