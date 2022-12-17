@@ -59,9 +59,19 @@ export const bonuses = {
     },
 };
 export const header = {
-    regButton: '[class^="Button_root__4U57W"][aria-label="signUpBtn"]', // кнопка "Регистрация"
-    closeRegButton: '[class^="ButtonClose_root"][aria-label="Close modal auth"]', // кнопка закрывания окна регистрации
+    regButton: '[aria-label="signUpBtn"]', // кнопка "Регистрация"
+    closeRegButton: '[aria-label="Close modal auth"]', // кнопка закрывания окна регистрации
+    profileButton: '[aria-label="ProfileButton"]', // кнопка профиля
+};
+export const profileMenu = {
+    //окно пользователя
+    logOutButton: '[aria-label="sideBar_logout"]', // Выход
+    personalData: '[aria-label="sideBar_personal"]', // Личные данные
+};
+export const reg = {
+    //window1 - окно регистрации
     window1: {
+        modalWindow: '[aria-label="sign-up"]', // модальное окно регистрации
         currencyItem: '[class^="CurrencySelect_toggler"]', // кнопка выбор валюты
         currencyList: '[class^="CurrencySelect_list"]', // поле со всей валютой
         currencyNameList: '[class*="CurrencySelect_item"]', // валюта
@@ -74,7 +84,8 @@ export const header = {
             regEmailButton: '[class*="TypeToggler_button"][aria-label="Toggler on email"]', // кнопка выбора почты
             regPhoneButton: '[class*="TypeToggler_button"][aria-label="Toggler on mobile"]', // кнопка выбора телефона
         },
-        email: '[class*="inputWrapper"]', // поле электронной почты
+        emailField: '[class*="mail_root"]', // поле электронной почты
+        email: '[aria-label="input-email"]', // поле непосредственного ввода почты
         numberPh: '[aria-label="Enter phone number"]', // поле номера телефона
         countryButton: '[class*="CountrySelect_toggler"]', // кнопка выбора страны при регистрации по почте
         country: '[class*="CountrySelect_item"]', // страна при регистрации по почте
@@ -84,5 +95,18 @@ export const header = {
         regModButton: '[aria-label="authModalButton"]', // кнопка "Зарегистрироваться"
         promocodeButton: '[class*="Promocode_button"]', // кнопка "Промокод (если есть)"
         promocode: '[class*="PromocodeField_promocode"]', // поле для ввода промокода
+        password: '[class*="_root_78s1q_1"][type="password"]', // поле для ввода пароля
     },
+    //window2 - всплывающее окно с подтверждением регистрации
+    window2: {
+        closeWindow: '[aria-label="Close modal auth"]', // Закрытие модального окна подтверждения регистрации
+    },
+    //window3 - всплывающее окно 'Новичкам везёт!'
+    window3: {
+        closeWindow: '[aria-label="bonus popup close"]', // Закрытие модального окна
+    },
+};
+export const notification = {
+    //windowErrorServer - всплывающее окно 'Ошибка сервера. Пожалуйста, обратитесь в поддержку.'
+    windowErrorServer: '[class="Toastify__toast-body"]',
 }
